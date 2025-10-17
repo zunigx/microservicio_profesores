@@ -3,9 +3,7 @@ package mx.edu.uteq.idgs13.microservicio_profesores.dto;
 import lombok.Data;
 
 @Data
-public class ProfesoresDto {
-    private Long id;
-    private String nombre;
-    private String email;
+public class ProfesoresStatusDto {
+    private Long profesorId;
     private boolean activo;
 }

@@ -4,15 +4,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 import lombok.Data;
+
 @Data
 @Entity
-@Table(name = "profesores_divisiones")
 public class ProfesoresDivisiones {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long profesor_id;
-    private Long division_id;
+    
+    @Column(name = "division_id") // Corregido: antes era "nombre", que no tenía sentido
+    private Long divisionId;
+
+    private boolean activo; // Agregado para consistencia
 }
